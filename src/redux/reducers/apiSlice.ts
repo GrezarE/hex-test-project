@@ -92,6 +92,21 @@ export const apiSlice = createSlice({
       statisticRequest: false,
       statisticFail: true,
     }),
+    resetApiSlice: () => ({
+      errorText: "",
+      registerRequest: false,
+      registerSuccess: false,
+      registerFail: false,
+      loginRequest: false,
+      loginSuccess: false,
+      loginFail: false,
+      squeezeRequest: false,
+      squeezeSuccess: false,
+      squeezeFail: false,
+      statisticRequest: false,
+      statisticSuccess: false,
+      statisticFail: false,
+    }),
   },
 });
 
@@ -108,6 +123,7 @@ export const {
   statisticRequest,
   statisticSuccess,
   statisticFail,
+  resetApiSlice,
 } = apiSlice.actions;
 
 export const apiReducer = apiSlice.reducer;

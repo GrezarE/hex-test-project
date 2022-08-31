@@ -9,24 +9,24 @@ import {
 
 export const postLink: AppThunk =
   (link: string, token: string) => (dispatch) => {
-    dispatch(squeezeRequest);
-    fetch(`${BASE_URL}/squeeze`, {
+    dispatch(squeezeRequest());
+    fetch(`${BASE_URL}/squeeze?link=${link}`, {
       method: "POST",
       headers: {
         authorization: `Bearer ${token}`,
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({
-        link: link,
-      }),
+      // body: JSON.stringify({
+      //   link: link,
+      // }),
     })
       .then(checkResponse)
       .then((res) => {
         console.log(res);
-        dispatch(squeezeSuccess);
+        dispatch(squeezeSuccess());
       })
       .catch((err) => {
         console.log(err);
-        dispatch(squeezeFail);
+        dispatch(squeezeFail());
       });
   };

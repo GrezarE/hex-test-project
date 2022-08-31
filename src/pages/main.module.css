@@ -1,0 +1,35 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.table_box {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  list-style: none;
+}
+
+.box {
+  display: flex;
+  gap: 20px;
+}
+
+.section {
+  border: 1px solid #000;
+  width: 40%;
+  height: 54px;
+  font-size: 20px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.section:nth-child(3) {
+  width: 20%;
+}

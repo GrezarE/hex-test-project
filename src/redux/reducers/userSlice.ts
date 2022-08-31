@@ -17,10 +17,9 @@ export const userSlice = createSlice({
   name: "user",
   initialState,
   reducers: {
-    setUser: (store, action: PayloadAction<any>) => ({
+    setUserToken: (store, action: PayloadAction<string>) => ({
       ...store,
-      username: action.payload.name,
-      accessToken: action.payload.token,
+      accessToken: action.payload,
       isAuthenticated: true,
     }),
     clearUser: () => ({
@@ -28,8 +27,12 @@ export const userSlice = createSlice({
       accessToken: "",
       isAuthenticated: false,
     }),
+    setUserName: (store, action: PayloadAction<any>) => ({
+      ...store,
+      username: action.payload,
+    }),
   },
 });
 
-export const { setUser, clearUser } = userSlice.actions;
+export const { setUserToken, clearUser, setUserName } = userSlice.actions;
 export const userReducer = userSlice.reducer;

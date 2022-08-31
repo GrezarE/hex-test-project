@@ -15,14 +15,14 @@ import { useAppSelector } from "../../redux/hooks";
 // }
 
 export const ProtectedRoute = ({ children }: { children: JSX.Element }) => {
-  const { isAuthenticated } = useAppSelector((state) => state.user);
+  const { isAuthenticated } = useAppSelector((store) => store.user);
+  console.log(isAuthenticated);
   const location = useLocation();
 
   if (!isAuthenticated) {
     return <Navigate to="/login" state={{ from: location }} />;
-  } else {
-    return children;
   }
+  return children;
 
   // return (
   //   <Route
