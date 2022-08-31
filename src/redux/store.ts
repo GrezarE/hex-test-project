@@ -3,9 +3,10 @@ import thunk, { ThunkAction } from "redux-thunk";
 
 import { Action, ActionCreator } from "redux";
 import { apiReducer } from "./reducers/apiSlice";
+import { userReducer } from "./reducers/userSlice";
 
-const store = configureStore({
-  reducer: { api: apiReducer },
+export const store = configureStore({
+  reducer: { api: apiReducer, user: userReducer },
   middleware: [thunk],
   devTools: process.env.NODE_ENV !== "production",
 });
