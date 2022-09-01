@@ -18,9 +18,9 @@ export const App = () => {
         <Route
           path="/"
           element={
-            // <ProtectedRoute>
+            <ProtectedRoute>
               <MainPage />
-            // </ProtectedRoute>
+            </ProtectedRoute>
           }
         />
         <Route path="/login" element={<LoginPage />} />

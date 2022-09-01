@@ -23,17 +23,4 @@ export const ProtectedRoute = ({ children }: { children: JSX.Element }) => {
     return <Navigate to="/login" state={{ from: location }} />;
   }
   return children;
-
-  // return (
-  //   <Route
-  //     {...rest}
-  //     render={()  =>
-  //       isAuthenticated ? (
-  //         children
-  //       ) : (
-  //         <Navigate to={{ pathname: "/login", state={{ from: location }} }} />
-  //       )
-  //     }
-  //   />
-  // );
 };

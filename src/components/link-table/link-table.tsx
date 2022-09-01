@@ -1,5 +1,4 @@
 import React, { FC } from "react";
-import { Link } from "react-router-dom";
 import style from "./link-table.module.css";
 
 interface ILinkTable {
@@ -9,10 +8,19 @@ interface ILinkTable {
 }
 
 export const LinkTable: FC<ILinkTable> = ({ short, target, counter }) => {
+  // const onclick = () => {
+  //   navigator.clipboard.writeText(`http://79.143.31.216/s/${short}`)
+  // }
+
   return (
     <div className={style.box}>
-      <a href={short} target="_blank" className={style.section}>
-        {short}
+      <a
+        href={`http://79.143.31.216/s/${short}`}
+        target="_blank"
+        className={style.section}
+        // onClick={onclick}
+      >
+        {`http://79.143.31.216/s/${short}`}
       </a>
       <a href={target} target="_blank" className={style.section}>
         {target}

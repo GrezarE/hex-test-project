@@ -1,6 +1,6 @@
 import { AppThunk } from "../store";
 import { checkResponse } from "../../utils/check-response";
-import { BASE_URL, URL_LOGIN } from "../../utils/constants";
+import { BASE_URL } from "../../utils/constants";
 import { IUserSendData } from "../../utils/types";
 import { setUserToken, setUserName, clearUser } from "../reducers/userSlice";
 
@@ -17,7 +17,6 @@ export const postLogin: AppThunk = (data: IUserSendData) => (dispatch) => {
   })
     .then(checkResponse)
     .then((res) => {
-      console.log(res.access_token);
       dispatch(loginSuccess());
       dispatch(setUserToken(res.access_token));
       dispatch(setUserName(data.username));

@@ -6,23 +6,24 @@ import {
   squeezeFail,
   squeezeSuccess,
 } from "../reducers/apiSlice";
+import { addLink, ILink } from "../reducers/sortingSlice";
 
 export const postLink: AppThunk =
-  (link: string, token: string) => (dispatch) => {
+  (link: string, token: string, linksArray: ILink[]) => (dispatch) => {
     dispatch(squeezeRequest());
     fetch(`${BASE_URL}/squeeze?link=${link}`, {
-      method: "POST",
       headers: {
-        authorization: `Bearer ${token}`,
-        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+        accept: "application/json",
       },
-      // body: JSON.stringify({
-      //   link: link,
-      // }),
+      method: "POST",
     })
       .then(checkResponse)
       .then((res) => {
-        console.log(res);
+        const newLinksArray = linksArray.slice();
+        newLinksArray.push(res);
+        dispatch(addLink(newLinksArray));
+
         dispatch(squeezeSuccess());
       })
       .catch((err) => {

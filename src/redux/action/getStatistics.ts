@@ -6,19 +6,31 @@ import {
   statisticRequest,
   statisticSuccess,
 } from "../reducers/apiSlice";
+import { setAllLinks, setLength } from "../reducers/sortingSlice";
 
-export const getStatistics: AppThunk = () => (dispatch) => {
-  dispatch(statisticRequest);
-  fetch(`${BASE_URL}/statistics`, {
-    headers: { "Content-Type": "application/json" },
-  })
-    .then(checkResponse)
-    .then((res) => {
-      console.log(res);
-      dispatch(statisticSuccess);
-    })
-    .catch((err) => {
-      dispatch(statisticFail);
-      console.log(err);
-    });
-};
+export const getStatistics: AppThunk =
+  (token, order, offset, limit, type) => (dispatch) => {
+    dispatch(statisticRequest());
+    fetch(
+      `${BASE_URL}/statistics?order=${order}&offset=${offset}&limit=${limit}`,
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      }
+    )
+      .then(checkResponse)
+      .then((res) => {
+        if (type === "check") {
+          dispatch(setLength(res.length));
+        }
+        if (type === "set") {
+          dispatch(statisticSuccess());
+          dispatch(setAllLinks(res));
+        }
+      })
+      .catch((err) => {
+        dispatch(statisticFail());
+        console.log(err);
+      });
+  };
