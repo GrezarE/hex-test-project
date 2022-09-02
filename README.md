@@ -19,14 +19,16 @@
 
 ## Команды
 
-### `npm run start`
+### `npm run first`
+Запускает проект, но предварительно устанавливает необходимые библиотеки (`npm install`)
 
+### `npm run start`
 Запускает проект в режиме разработки.
 
 ### `npm run build`
-
 Создает готовую сборку.
 
 ## [Ссылка на GH-Pages](https://grezare.github.io/hex-test-project/)
 
 Тестовое задание залито на gh-pages, но блокируется "Mixed Content" при доступе к http://79.143.31.216
+
