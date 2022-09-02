@@ -1,0 +1,25 @@
+.box {
+  display: flex;
+  gap: 20px;
+}
+
+.section {
+  border: 1px solid #000;
+  width: 100%;
+  max-width: 500px;
+  height: 54px;
+  font-size: 20px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.section:nth-child(3) {
+  width: 20%;
+}
+
+.section:hover {
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.1);
+}

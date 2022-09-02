@@ -1,0 +1,33 @@
+.box {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.link {
+  margin-top: 50px;
+  font-size: 20px;
+  text-decoration: none;
+  color: #4C4CFF;
+}
+
+.header {
+  padding: 0;
+  padding-bottom: 24px;
+  font-size: 42px;
+  margin: 0;
+}
+
+.link_box {
+  display: flex;
+  gap: 10px;
+}
+
+.text {
+  margin: 0;
+  padding-top: 50px;
+  font-size: 20px;
+}
