@@ -27,8 +27,6 @@
 
 Создает готовую сборку.
 
-## Ссылка на GH-Pages
+## [Ссылка на GH-Pages](https://grezare.github.io/hex-test-project/)
 
 Тестовое задание залито на gh-pages, но блокируется "Mixed Content" при доступе к http://79.143.31.216
-[Ссылка](https://grezare.github.io/hex-test-project/)
-
