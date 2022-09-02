@@ -1,4 +1,3 @@
-import React, { useEffect } from "react";
 import { RegisterForm } from "../components/register-form/register-form";
 import { Link, Navigate } from "react-router-dom";
 import style from "./auth.module.css";

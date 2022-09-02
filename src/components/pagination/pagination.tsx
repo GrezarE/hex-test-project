@@ -9,7 +9,6 @@ export const Pagination = ({ page }: { page: number }) => {
 
   const onClick = () => {
     const offset = page * limit - limit;
-    console.log(offset);
     dispatch(setOffsetSort(offset));
   };
 

@@ -25,13 +25,15 @@ export const MainPage = () => {
   };
 
   useEffect(() => {
-    dispatch(getStatistics(accessToken, "asc_short", 0, 0, "check"));
-    setPages(length, limit);
-  }, [linksArray]);
+    if (accessToken && linksArray) {
+      dispatch(getStatistics(accessToken, "asc_short", 0, 0, "check"));
+      setPages(length, limit);
+    }
+  }, [linksArray, accessToken]);
 
   useEffect(() => {
     dispatch(getStatistics(accessToken, order, offset, limit, "set"));
-  }, [accessToken, order, offset, limit]);
+  }, [order, offset]);
 
   return (
     <div className={style.main}>

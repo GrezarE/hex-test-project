@@ -1,7 +1,6 @@
 import React, { useState, ChangeEventHandler } from "react";
 import style from "./input-form.module.css";
 import { postLink } from "../../redux/action/postLink";
-import { getStatistics } from "../../redux/action/getStatistics";
 import { useAppDispatch, useAppSelector } from "../../redux/hooks";
 
 export const InputForm = () => {

@@ -22,7 +22,6 @@ export const RegisterForm = () => {
       username: name,
       password: password,
     };
-    console.log(data);
     dispatch(postRegister(data));
   };
 
