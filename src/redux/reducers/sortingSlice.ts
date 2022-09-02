@@ -18,7 +18,7 @@ interface ISortingSlice {
 const initialState: ISortingSlice = {
   order: "asc_short",
   offset: 0,
-  limit: 5,
+  limit: 10,
   linksArray: [],
   length: 0,
 };
